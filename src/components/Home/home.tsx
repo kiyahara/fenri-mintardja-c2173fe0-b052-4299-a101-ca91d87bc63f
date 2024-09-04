@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
-import iconUp from "../icon/CaretDown.svg";
 
 interface DataTableModel {
   firstName: string;
@@ -155,10 +154,10 @@ export default function HomeComponent() {
   }
 
   function isEdited(index: number, key: keyof DataTableModel) {
-    if (currentAction === "add" && index === 0) {
-      return data[index][key] !== temporaryData[index]?.[key];
-    } else if (currentAction === "edit") {
-      return data[index][key] !== temporaryData[index]?.[key];
+    if (currentAction == "add" && index == 0) {
+      return data[index][key] != temporaryData[index]?.[key];
+    } else if (currentAction == "edit") {
+      return data[index][key] != temporaryData[index]?.[key];
     }
     return false;
   }
